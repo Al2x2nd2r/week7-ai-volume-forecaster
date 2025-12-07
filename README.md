@@ -7,8 +7,8 @@
 
 ### Seasonal Patterns
 1. **Weekly Pattern**: The highest days were Thursday (μ=1424), Wednesday (μ=1420), and Friday (μ=1422). The Lowest days were Sunday (μ=1313) and Satuday (μ=1321). This suggests a pattern where mid-week days preform better.
-2. **Monthly Pattern**: I was unable to reach any solid conclusion for the monthly pattern. Its likely the aforementioned weekly pattern continues on throughout the year, rather than any certain month notably increasing or decreasing in growth.
-3. **Yearly Pattern**: [Any annual cycles?]
+2. **Monthly Pattern**: I was unable to reach any solid conclusion for the monthly pattern. It's likely the aforementioned weekly pattern continues on throughout the year, rather than any certain month notably increasing or decreasing in growth.
+3. **Yearly Pattern**: I was unable to reach any solid conclusion for the yearly pattern. As with the monthly pattern, it's likely the aforementioned weekly pattern continues on throughout the year, rather than any certain month notably increasing or decreasing in growth.
 
 ### Statistical Properties
 - Mean: 1390.78 Units
@@ -18,13 +18,13 @@
 ## Forecasting Methods Applied
 ### Moving Average
 - Window size tested: 7 days
-- Accuracy (MAE): [value]
+- Accuracy (MAE): 65.8921
 - Pros: Simplicity and Smoothing of Data are the biggest pros when it comes to moving averages. They are easy to implement and understand, and the smoothing of data helps with any short-term fluctuation or noise allowing you to see the actual trend.
 - Cons: However, there are some cons when it comes to moving averages. Since it averages out past data, it can be late to react to recent trends or any sudden changes. Another issue, as we saw, is that it doesnt cover seasonality well. I was unable to reach a conclusion on the monthly pattern because it cannot capture repeated/cyclical patterns effecitvely.
 
 ### Exponential Smoothing
 - Alpha parameter: 0.3
-- Accuracy (MAE): [value]
+- Accuracy (MAE): 71.9890
 - Pros: Bceause exponential smoothing applies greater weight to newer data, exponential smoothing adjusts more quickly than moving averages. Exponential smoothing is also very easy to implement.
 - Cons: Exponential smoothing still seems to ignore monthly/yearly patterns. Another downside is that the forecast accuracy seems to depend heavily on choosing the right Alpha.
 
