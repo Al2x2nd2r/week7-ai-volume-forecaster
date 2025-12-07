@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+!src/
+!include/
+!data_generator.py
+!forecast_report.md
+!forecast_system.py
+!/data/
+!requirements.txt
+!README.md
