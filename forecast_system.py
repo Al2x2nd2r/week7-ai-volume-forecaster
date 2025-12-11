@@ -84,11 +84,13 @@ class QuantitativeForecaster:
         last_ma = self.df[f'MA_{window}'].iloc[-1]
 
         # Calculate accuracy on historical data
-        valid_data = self.df[f'MA_{window}'].dropna()
-        mae = mean_absolute_error(
-            self.df['volume'][window:],
-            self.df[f'MA_{window}'][window:].shift(1).dropna()
-        )
+        # Align predictions and actuals before computing MAE to avoid
+        # inconsistent-sample errors. Shift MA to represent the forecast
+        # for the next period, drop NA, then select actuals by index.
+        preds = self.df[f'MA_{window}'].shift(1)
+        preds_valid = preds.dropna()
+        actual_for_preds = self.df['volume'].loc[preds_valid.index]
+        mae = mean_absolute_error(actual_for_preds, preds_valid)
 
         print(f"Next period forecast: {last_ma:.0f} units")
         print(f"Historical MAE: {mae:.2f} units")
